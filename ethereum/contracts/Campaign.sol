@@ -17,7 +17,7 @@ contract Campaign {
     struct Request {
         string description;
         uint value;
-        address payable recipient;
+        address recipient;
         bool complete;
         uint approvalCount;
         mapping(address => bool) approvals;
@@ -46,7 +46,7 @@ contract Campaign {
         approversCount++;
     }
 
-    function createRequest(string memory description, uint value, address payable recipient)
+    function createRequest(string memory description, uint value, address recipient)
         public restricted {
         Request memory newRequest = Request({
            description: description,

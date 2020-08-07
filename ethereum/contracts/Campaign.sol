@@ -81,13 +81,13 @@ contract Campaign {
 
     function getSummary() public view returns (uint, uint, uint, uint, address) {
         return (
-            minimunContribution,
-            this.balance,
+            minimumContribution,
+            address(this).balance,
             requests.length,
             approversCount,
             manager
         );
-    }
+  }
 
     function getRequestsCount() public view returns (uint) {
         return requests.length;
